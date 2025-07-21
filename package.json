@@ -1,0 +1,30 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "learning react",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morepankaj/react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Pankaj More",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morepankaj/react/issues"
+  },
+  "homepage": "https://github.com/morepankaj/react#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

@@ -1,0 +1,40 @@
+- ^ vs ~
+- npx : to execute the package
+- why cdn is not good way inject react in project
+  - n/w call
+  - version change will cause issue
+- why app is fast or optimize
+- parcel is beast (read about it)
+
+  - dev build
+  - local server
+  - HMR - hot module replacement
+  - file watching algorithm
+  - Caching : faster build
+  - image optimization
+  - minification
+  - Binding
+  - Compressing
+  - also allow to work with https
+  - for local build : npx parcel index.html
+  - for prod : comment out main i.e entr point of app.js
+
+    - npx parcel build index.html
+
+  - browserlist : list where our app support \*\*
+    - "browserlist" : {
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 safari versions"
+      }
+    - check browserlist.dev : over here we can see % how many people covering this
+    - you can also specific region where i want to use us poeple
+
+
+  - JSX is HTML like syntax
+  - Babel use : jsx to react.createElement => obj => htmlElement (render)
+    - its open source complier
+    - check babel js
+  - its camel case syntax
+  - explore all tags in JSX
+  - for multiline us brackets
