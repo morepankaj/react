@@ -38,3 +38,14 @@
   - its camel case syntax
   - explore all tags in JSX
   - for multiline us brackets
+  - jsx takes care of sanitization, cross site web attack
+
+  - react component : can be created using 2 ways
+    - class based compoenent : old
+    - function based component : new : will be using this way and its latest
+      - a function that return JSX code called function based compoenent
+      - or javascript function that return JSX code 
+    - compoenent composition 
+      - element inside other
+    - you can write js code as well just surround with {}
+
