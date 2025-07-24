@@ -22,6 +22,7 @@
     - npx parcel build index.html
 
   - browserlist : list where our app support \*\*
+
     - "browserlist" : {
       "last 2 chrome versions",
       "last 2 firefox versions",
@@ -29,7 +30,6 @@
       }
     - check browserlist.dev : over here we can see % how many people covering this
     - you can also specific region where i want to use us poeple
-
 
   - JSX is HTML like syntax
   - Babel use : jsx to react.createElement => obj => htmlElement (render)
@@ -41,11 +41,20 @@
   - jsx takes care of sanitization, cross site web attack
 
   - react component : can be created using 2 ways
+
     - class based compoenent : old
     - function based component : new : will be using this way and its latest
       - a function that return JSX code called function based compoenent
-      - or javascript function that return JSX code 
-    - compoenent composition 
+      - or javascript function that return JSX code
+    - compoenent composition
       - element inside other
     - you can write js code as well just surround with {}
 
+  - passing props to compoenent like its passing arguments
+
+    - its js object
+
+  - config driven UI
+  - why we need key?
+    - whenever parent-child data to iterate make sure to add key to uniqukly identify each child and useful for rendering
+    - never use index as key, its bad practise
