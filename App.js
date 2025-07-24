@@ -888,8 +888,9 @@ const Body = () => {
     <div className="body">
       <div className="search-container">search</div>
       <div className="res-container">
-        <RestaurantCard resData={listObj[0]} />
-        <RestaurantCard resData={listObj[1]} />
+        {listObj.map((res) => (
+          <RestaurantCard key={res.card.card.info.id} resData={res} />
+        ))}
       </div>
     </div>
   );
