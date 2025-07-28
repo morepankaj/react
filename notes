@@ -56,5 +56,20 @@
 
   - config driven UI
   - why we need key?
+
     - whenever parent-child data to iterate make sure to add key to uniqukly identify each child and useful for rendering
     - never use index as key, its bad practise
+
+  - name export and default export
+
+- react hooks : utility fun , normal js function
+
+  - use state : superpower for react variable
+  - use effects
+
+  - useState : whenver the state variable update the react will re render the component
+
+  - read
+  - react consilation (react fibre)
+    - (react fibre) : react-fibre-architecture
+    - incemental rendering
