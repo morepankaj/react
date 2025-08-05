@@ -65,7 +65,10 @@
 - react hooks : utility fun , normal js function
 
   - use state : superpower for react variable
-  - use effects
+  - use effects :
+    useEffect(callback, dependancy array);
+
+    - it will call after render fn
 
   - useState : whenver the state variable update the react will re render the component
 
@@ -73,3 +76,23 @@
   - react consilation (react fibre)
     - (react fibre) : react-fibre-architecture
     - incemental rendering
+  - check optional chaning
+
+  - condition rendering : rendering based on condition
+
+  - whenver the state variable update , react triggers a reconsilation cycle (re rendering the compoenent)
+
+  - ep 6 : check again : api issue
+  - https://corsproxy.io/ : to bypass the cors error
+
+    - example how to use
+      - https://corsproxy.io/?url=https://example.com
+
+  - when useEffect called : when page render its get call
+
+    - if no dependancy array => useEffect is called every render
+    - if dependancy array is empty [] => useEffect is called on intial render (just once)
+    - if dependancy array is there (not empty) => then it will called wheneer it changes
+
+  - dont create useState inside your body component not the gloabl level and use useState on the top which leads to inconsistancy in program
+  - dont create useState inside if/else , forloop and even inside function
