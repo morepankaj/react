@@ -96,3 +96,19 @@
 
   - dont create useState inside your body component not the gloabl level and use useState on the top which leads to inconsistancy in program
   - dont create useState inside if/else , forloop and even inside function
+
+  - routing in react
+    - there are 2 types of routing
+      - client side :
+      - server side : 
+
+        - Client side :
+          The browser loads a single HTML file along with a JavaScript bundle. Navigating between "pages" doesn’t involve fetching a new HTML file from the server. Instead, React dynamically updates the DOM to show different components based on the URL.
+
+          - Tools:
+            - The most common library is React Router (react-router-dom). You define routes such as /, /about, /contact that render specific components.
+
+          Benefits:
+            - Faster page transitions—no full reloads.
+            - Smoother user experience, typical of single-page applications (SPAs).
+            - Can implement dynamic/nested routes and control over navigation history.
