@@ -98,9 +98,11 @@
   - dont create useState inside if/else , forloop and even inside function
 
   - routing in react
+
     - there are 2 types of routing
+
       - client side :
-      - server side : 
+      - server side :
 
         - Client side :
           The browser loads a single HTML file along with a JavaScript bundle. Navigating between "pages" doesn’t involve fetching a new HTML file from the server. Instead, React dynamically updates the DOM to show different components based on the URL.
@@ -109,6 +111,15 @@
             - The most common library is React Router (react-router-dom). You define routes such as /, /about, /contact that render specific components.
 
           Benefits:
-            - Faster page transitions—no full reloads.
-            - Smoother user experience, typical of single-page applications (SPAs).
-            - Can implement dynamic/nested routes and control over navigation history.
+
+          - Faster page transitions—no full reloads.
+          - Smoother user experience, typical of single-page applications (SPAs).
+          - Can implement dynamic/nested routes and control over navigation history.
+
+  - lifecycle of class based component
+    - constructor -> render
+    - if componentDidMount and child component exists then
+      - parent constructor-> parent render -> child constructor -> child render -> child componentDidmount -> parent componentDidMount
+    - componentDidMount : used to make api call but why inside
+      - API calls are made inside componentDidMount in class-based React components to ensure the API request happens after the component has been rendered and added to the DOM. This aligns with React's lifecycle: componentDidMount runs only once, immediately after the initial render, making it the ideal place for side effects such as data fetching.
+    - check diagram : react lifecycle methods -diagram
