@@ -6,31 +6,41 @@ class UserClass extends React.Component {
     console.log(this.props.name + " component constructor");
 
     this.state = {
-      count: 0,
-      count2: 0,
+      userInfo: {
+        name: "xxx",
+        location: "yyy",
+      },
     };
   }
 
-  componentDidMount() {
-    console.log(this.props.name + " componentDidMount");
+  async componentDidMount() {
+    const response = await fetch("https://api.github.com/users/pankajmore");
+    const data = await response.json();
+    console.log(data);
+    this.setState({ userInfo: data });
+
+    /* this.timer = setInterval(() => {
+      console.log("will call each sec");
+    }, 1000); */
+  }
+
+  componentWillUnmount() {
+    console.log(" component unmounted");
+    //clearInterval(this.timer);
+  }
+  componentDidUpdate() {
+    console.log(" component updated");
   }
 
   render() {
-    const { location } = this.props;
-    console.log(this.props.name + " component render");
-
+    //const { location } = this.userInfo;
+    //console.log(this.props.name + " component render");
+    console.log(this.state.userInfo.name + " component render");
     return (
       <div className="user-card">
-        <h2>Count: {this.state.count}</h2>
-        <button
-          onClick={() => {
-            this.setState({ count: this.state.count + 1 });
-          }}
-        >
-          Increment count
-        </button>
-        <h1>Name: {this.props.name}</h1>
-        <h2>Location : {location}</h2>
+        <img src={this.state.userInfo.avatar_url} alt="avatar" />
+        <h1>Name: {this.state.userInfo.name}</h1>
+        <h2>Location : {this.state.userInfo.blog}</h2>
         <h3>Contact: @pankaj.more</h3>
       </div>
     );
