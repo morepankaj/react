@@ -117,6 +117,7 @@
           - Can implement dynamic/nested routes and control over navigation history.
 
   - lifecycle of class based component
+
     - constructor -> render
     - if componentDidMount and child component exists then
       - parent constructor-> parent render -> child constructor -> child render -> child componentDidmount -> parent componentDidMount
@@ -124,3 +125,14 @@
       - API calls are made inside componentDidMount in class-based React components to ensure the API request happens after the component has been rendered and added to the DOM. This aligns with React's lifecycle: componentDidMount runs only once, immediately after the initial render, making it the ideal place for side effects such as data fetching.
     - check diagram : react lifecycle methods -diagram
     - classs based component require default value beccause we need to render with dummy data then on componentDidMount we can put exactly data
+
+  - single responsibility function
+
+  - Lazy loading || on demandLoading
+  - chunking/code splitting/dynamic bundle/lazy loading/on demand loading / dynamic import
+  - Suspense , lazy
+
+  - check saas styling , SES styling
+  - check style component : search style compoenent
+    - material UI
+    - chakra UI
