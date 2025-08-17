@@ -134,5 +134,20 @@
 
   - check saas styling , SES styling
   - check style component : search style compoenent
+
     - material UI
     - chakra UI
+
+  - tailwind is lightweight
+  - we can build whatever we want
+
+  - higher order compoenent
+
+    - its a take a compoenent and return a component
+      - its like enhancer and return it
+
+  - UI (jsx) and Data layer (code, state..)
+
+    - how to manage data properly
+
+  - control and un control component

@@ -1,6 +1,8 @@
 import useRestuarantMenu from "../utils/useRestuarantMenu";
 import { useParams } from "react-router";
 import Shimmer from "./Shimmer";
+import ResturantCategory from "./ResturantCategory";
+
 const RestaurantMenu = () => {
   const { resId } = useParams();
   console.log(resId);
@@ -12,24 +14,32 @@ const RestaurantMenu = () => {
   let { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
+  const { name, cuisines, costForTwoMessage } =
+    resInfo?.cards[2]?.card?.card?.info || {};
+
+  //console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  //console.log(">>>>>", categories);
+
+  //"@type": "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory",
 
   return (
-    <div>
-      <h1>{resInfo?.cards[2]?.card?.card?.info.name}</h1>
-      <h2>{resInfo?.cards[2]?.card?.card?.info.cuisines.join(", ")}</h2>
-      <h3>{resInfo?.cards[2]?.card?.card?.info.costForTwoMessage}</h3>
-      <h4>Menu</h4>
-      {/* Add your menu items here */}
-      <p>Menu items will be displayed here.</p>
-      {/* You can use a list or any other structure to display the menu */}
-      <ul>
-        {itemCards &&
-          itemCards.map((item) => (
-            <li key={item.card.info.id}>
-              {item.card.info.name + "-- ₹" + item.card.info.price / 100}
-            </li>
-          ))}
-      </ul>
+    <div className="text-center">
+      <h1 className="font-bold my-3 text-2xl">{name}</h1>
+      <p className="font-semibold text-lg">{cuisines.join(", ")}</p>
+      <p className="font-thin">{costForTwoMessage}</p>
+      {categories.map((category) => (
+        <ResturantCategory
+          key={category?.card?.card?.categoryId}
+          category={category?.card?.card}
+        />
+      ))}
     </div>
   );
 };

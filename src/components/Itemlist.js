@@ -1,0 +1,39 @@
+import { RES_URL } from "../utils/constants";
+const ItemList = ({ items }) => {
+  console.log(items, "ItemList");
+  //return <div>itemList</div>;
+  return (
+    <div>
+      {items.map((item) => (
+        //console.log(item, "<<<ItemList"),
+        <div
+          key={item.card.info.id}
+          className="p-2 m-2 border-b border-gray-200 text-left flex justify-between"
+        >
+          <div className="w-9/12">
+            <div className="py-2">
+              <span>{item.card.info.name}</span>
+              <span>
+                - ₹
+                {item.card.info.defaultPrice
+                  ? item.card.info.defaultPrice / 100
+                  : item.card.info.price / 100}
+              </span>
+            </div>
+            <p className="text-xs">{item.card.info.description}</p>
+          </div>
+          <div className="w-3/12 p-4">
+            <div className="absolute">
+              <button className="bottom-0  text-white bg-black rounded-lg p-1 m-2">
+                +ADD
+              </button>
+            </div>
+            <img className="w-full" src={RES_URL + item.card.info.imageId} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ItemList;
